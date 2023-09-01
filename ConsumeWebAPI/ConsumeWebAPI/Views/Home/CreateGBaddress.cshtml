@@ -1,0 +1,33 @@
+﻿@page
+@model ConsumeWebAPI.Views.Home.CreateGBModel
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create GB Address</title>
+</head>
+<body>
+    <h1>Create GB Address</h1>
+
+    @using (Html.BeginForm("SaveGBAddress", "Home", FormMethod.Post))
+    {
+        <div>
+            <label for="street1">Street 1:</label>
+            <input type="text" id="street1" name="Street1" required>
+        </div>
+
+        <div>
+            <label for="street2">Street 2:</label>
+            <input type="text" id="street2" name="Street2">
+        </div>
+
+        <button type="submit">Save GB Address</button>
+
+        <a href="@Url.Action("Index", "Home")">Back to Customer List</a>
+    }
+</body>
+</html>
+
+

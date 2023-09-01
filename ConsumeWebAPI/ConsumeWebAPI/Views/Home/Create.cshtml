@@ -1,0 +1,59 @@
+@model Customer.Service.Model.Customer
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create Customer</title>
+</head>
+<body>
+    <h1>Create Customer</h1>
+
+    @using (Html.BeginForm("Create", "Home", FormMethod.Post))
+    {
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="Name" required>
+        </div>
+
+        <div>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="Age" required>
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="Email" required>
+        </div>
+
+        <div>
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="Phone" required>
+        </div>
+
+
+        <div>
+            <label for="country">Country:</label>
+            <select id="country" name="Country">
+                <option value="IT">Italy</option>
+                <option value="GB">United Kingdom</option>
+            </select>
+        </div>
+
+        <button type="submit">Create</button>
+
+        <a href="@Url.Action("Index", "Home")">Back to Customer List</a>
+    }
+
+    <script>
+        document.getElementById("country").addEventListener("change", function () {
+            var selectedCountry = this.value;
+            if (selectedCountry === "IT") {
+                window.location.href = "@Url.Action("CreateITAddress", "Home")";
+            } else if (selectedCountry === "GB") {
+                window.location.href = "@Url.Action("CreateGBAddress", "Home")";
+            }
+        });
+    </script>
+</body>
+</html>

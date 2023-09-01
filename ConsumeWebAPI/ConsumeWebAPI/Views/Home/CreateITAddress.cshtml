@@ -1,0 +1,39 @@
+﻿@page
+@model ConsumeWebAPI.Views.Home.createitModel
+
+	
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create IT Address</title>
+</head>
+<body>
+    <h1>Create IT Address</h1>
+
+    @using (Html.BeginForm("SaveITAddress", "Home", FormMethod.Post))
+    {
+        <div>
+            <label for="street1">Street 1:</label>
+            <input type="text" id="street1" name="Street1" required>
+        </div>
+
+        <div>
+            <label for="street2">Street 2:</label>
+            <input type="text" id="street2" name="Street2">
+        </div>
+
+        <div>
+            <label for="street3">Street 3:</label>
+            <input type="text" id="street3" name="Street3">
+        </div>
+
+        <button type="submit">Save IT Address</button>
+
+        <a href="@Url.Action("Index", "Home")">Back to Customer List</a>
+    }
+</body>
+</html>
+
+

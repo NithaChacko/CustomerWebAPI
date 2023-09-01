@@ -1,0 +1,45 @@
+@model Customer.Service.Model.Customer
+
+@{
+    ViewData["Title"] = "Edit Customer";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <h1>@ViewData["Title"]</h1>
+
+    @using (Html.BeginForm("Edit", "Home", FormMethod.Post))
+    {
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="Name" value="@Model.Name" required>
+        </div>
+
+        <div>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="Age" value="@Model.Age" required>
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="Email" value="@Model.Email" required>
+        </div>
+
+        <div>
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="Phone" value="@Model.Phone" required>
+        </div>
+
+        
+
+        <button type="submit">Edit</button>
+
+        <a href="@Url.Action("Index", "Home")">Back to User List</a>
+    }
+</body>
+</html>
